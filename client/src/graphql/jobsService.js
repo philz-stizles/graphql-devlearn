@@ -1,6 +1,23 @@
 import gql from 'graphql-tag'
 import client from './'
 
+const jobDetailFragment = gql`
+    fragment JobDetail on Job {
+        id
+        title
+        description
+        postedAt
+        closingAt
+        salary
+        company {
+            id
+            name
+            description
+        }
+    }
+
+`
+
 export const loadJobs = async () => {
     const query = gql`{
         jobs {
@@ -22,19 +39,10 @@ export const loadJobs = async () => {
 const jobQuery = gql`
     query getJob($id: ID!) {
         job(id: $id) {
-            id
-            title
-            description
-            postedAt
-            closingAt
-            salary
-            company {
-                id
-                name
-                description
-            }
+            ...JobDetail
         }
     }
+    ${jobDetailFragment}
 `
 
 export const loadJob = async (id) => {
@@ -65,14 +73,10 @@ export const createJob = async (input) => {
     const mutation = gql`
         mutation CreateJob($input: CreateJobInput) {
             job: createJob(input: $input) {
-                id
-                title
-                description
-                company {
-                    name
-                }
+                ...JobDetail
             }
         }
+        ${jobDetailFragment}
     `
     
     const { data: { job }} = await client.mutate({

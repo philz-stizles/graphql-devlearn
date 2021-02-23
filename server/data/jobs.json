@@ -258,5 +258,15 @@
     "duration": "CONTRACT",
     "companyId": "53589485-19f6-404e-aac4-352a1a32ee4b",
     "postedAt": "2021-02-23"
+  },
+  {
+    "id": "5b34a2af-4ec9-4b71-8cc6-5b7aa27d5a85",
+    "title": "React Developer",
+    "description": "${jobDetailFragment}",
+    "closingAt": "2021-03-14",
+    "salary": 2.5,
+    "duration": "CONTRACT",
+    "companyId": "53589485-19f6-404e-aac4-352a1a32ee4b",
+    "postedAt": "2021-02-23"
   }
 ]
