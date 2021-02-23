@@ -1,0 +1,94 @@
+[
+  {
+    "id": "3974ada3-c58e-43e2-b221-a8ff0c3a4a64",
+    "username": "Theophilus",
+    "email": "theophilus.ighalo@gmail.com",
+    "password": "123456",
+    "gender": "Polygender",
+    "age": 25,
+    "avatar": "http://dummyimage.com/241x190.jpg/5fa2dd/ffffff",
+    "isActive": false,
+    "createdAt": "4/13/2020",
+    "companyId": "53589485-19f6-404e-aac4-352a1a32ee4b"
+  },
+  {
+    "id": "5f856952-4ead-4584-8178-7e5c412eee76",
+    "username": "biglesias2",
+    "email": "aolekhov2@blinklist.com",
+    "gender": "Non-binary",
+    "age": 12,
+    "avatar": "http://dummyimage.com/236x175.bmp/5fa2dd/ffffff",
+    "isActive": true,
+    "createdAt": "4/10/2020"
+  },
+  {
+    "id": "b30349bc-7ad8-4b59-bf34-293857afc9e9",
+    "username": "santyshev3",
+    "email": "rpamplin3@china.com.cn",
+    "gender": "Non-binary",
+    "age": 12,
+    "avatar": "http://dummyimage.com/246x203.jpg/cc0000/ffffff",
+    "isActive": false,
+    "createdAt": "7/4/2020"
+  },
+  {
+    "id": "451f6bb6-7f5c-4ea4-a629-ee27eb04dff2",
+    "username": "aboys4",
+    "email": "cskyrm4@umich.edu",
+    "gender": "Genderfluid",
+    "age": 17,
+    "avatar": "http://dummyimage.com/233x230.jpg/dddddd/000000",
+    "isActive": true,
+    "createdAt": "12/13/2020"
+  },
+  {
+    "id": "810c4603-7b43-4816-9f67-c455970044cb",
+    "username": "cbelison5",
+    "email": "cleward5@amazon.co.jp",
+    "gender": "Agender",
+    "age": 19,
+    "avatar": "http://dummyimage.com/221x201.png/dddddd/000000",
+    "isActive": false,
+    "createdAt": "2/9/2021"
+  },
+  {
+    "id": "cdda58b5-1d9a-4b1d-81a6-3d47acbd3f80",
+    "username": "clief6",
+    "email": "gsclanders6@cocolog-nifty.com",
+    "gender": "Female",
+    "age": 23,
+    "avatar": "http://dummyimage.com/250x158.png/dddddd/000000",
+    "isActive": false,
+    "createdAt": "7/26/2020"
+  },
+  {
+    "id": "6ef46c7a-5bf8-4e96-b90d-8ef5ec3d6d89",
+    "username": "nlearmonth7",
+    "email": "tdownton7@weather.com",
+    "gender": "Bigender",
+    "age": 36,
+    "avatar": "http://dummyimage.com/208x233.bmp/ff4444/ffffff",
+    "isActive": false,
+    "createdAt": "12/19/2020"
+  },
+  {
+    "id": "98ffe9e3-e199-4179-9d5e-91c7679c1530",
+    "username": "ezanuciolii8",
+    "email": "rcuppitt8@webs.com",
+    "gender": "Polygender",
+    "age": 14,
+    "avatar": "http://dummyimage.com/163x179.png/ff4444/ffffff",
+    "isActive": false,
+    "createdAt": "6/25/2020"
+  },
+  {
+    "id": "fe44cd4d-be69-480e-9d5a-77ad96066f07",
+    "username": "ldepke9",
+    "email": "jiorio9@yahoo.co.jp",
+    "gender": "Female",
+    "age": 32,
+    "avatar": "http://dummyimage.com/137x219.png/ff4444/ffffff",
+    "isActive": false,
+    "createdAt": "9/21/2020"
+  }
+]
