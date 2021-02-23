@@ -9,6 +9,7 @@ type Query {
     jobs: [Job]!
     job(id: ID!): Job
     company(id: ID!): Company
+    messages: [Message]
 }
 
 type Mutation {
@@ -18,6 +19,7 @@ type Mutation {
     createCourse(title: String!, price: Float): Course
     createComment(username: String!, email: String!): Comment
     createJob(input: CreateJobInput): Job
+    addMessage(input: MessageInput!): Message
 }
 
 type User {
@@ -99,4 +101,14 @@ type Company {
     name: String!
     description: String!
     jobs: [Job]!
+}
+
+type Message {
+    id: ID!
+    from: String 
+    text: String
+}
+
+input MessageInput {
+    text: String
 }
