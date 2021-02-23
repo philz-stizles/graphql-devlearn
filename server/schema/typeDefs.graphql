@@ -1,0 +1,102 @@
+# Scalar(Stores a single value, unlike an array or object) -> String, Int, Float, Boolean, ID
+type Query {
+    users: [User]
+    user(id: ID!): User
+    posts: [Post]
+    post(id: ID!): Post
+    courses: [Course]!
+    course(id: ID!): Course
+    jobs: [Job]!
+    job(id: ID!): Job
+    company(id: ID!): Company
+}
+
+type Mutation {
+    createUser(username: String!, email: String!): User
+    deleteUser(id: ID!): User
+    createPost(title: String!, body: String!): Post
+    createCourse(title: String!, price: Float): Course
+    createComment(username: String!, email: String!): Comment
+    createJob(input: CreateJobInput): Job
+}
+
+type User {
+    id: ID!
+    username: String!
+    email: String!
+    avatar: String
+    isActive: Boolean!
+    createdAt: String
+    profile: Profile
+    courses: [Course]
+    posts: [Post]
+}
+
+type Course {
+    id: ID!
+    title: String!
+    author: User!
+    price: Float
+    isPublished: Boolean!
+    createdAt: String!
+    publishedAt: String
+}
+
+type Profile {
+    user: User!
+    age: Int
+    skills: [String]!
+    email: String!
+}
+
+type Post {
+    id: ID!
+    title: String!
+    body: String!
+    author: User!
+    likes: Int
+    isPublished: Boolean!
+    createdAt: String!
+    publishedAt: String
+    comments: [Comment]
+}
+
+type Comment {
+    id: ID!
+    post: Post!
+    body: String!
+    createdAt: String!
+    user: User!
+}
+
+type Job {
+    id: ID!
+    title: String!
+    company: Company
+    description: String!
+    postedAt: String!
+    closingAt: String
+    salary: Float
+    duration: JobDuration 
+}
+
+input CreateJobInput {
+    id: ID!
+    title: String!
+    description: String!
+    closingAt: String
+    salary: Float
+    duration: JobDuration 
+}
+
+enum JobDuration {
+    CONTRACT
+    PERMANENT
+}
+
+type Company {
+    id: ID!
+    name: String!
+    description: String!
+    jobs: [Job]!
+}
