@@ -238,5 +238,25 @@
     "duration": "CONTRACT",
     "companyId": "53589485-19f6-404e-aac4-352a1a32ee4b",
     "postedAt": "2021-02-23"
+  },
+  {
+    "id": "7a9b7edb-1a7c-4daf-82a7-a6f23b0ff794",
+    "title": "Devops Marshal",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sem enim, egestas eget diam non, sodales congue massa. Etiam tincidunt, quam in venenatis tincidunt, dui est rutrum mi, at malesuada eros est at neque. Phasellus sit amet lacinia tellus. Nunc vestibulum sollicitudin dolor at feugiat. ",
+    "closingAt": "2021-03-04",
+    "salary": 3.5,
+    "duration": "CONTRACT",
+    "companyId": "53589485-19f6-404e-aac4-352a1a32ee4b",
+    "postedAt": "2021-02-23"
+  },
+  {
+    "id": "1d986da6-d707-43e1-a789-e16d32958c11",
+    "title": "Ember",
+    "description": "export default class JobForm",
+    "closingAt": "2021-03-05",
+    "salary": 2.5,
+    "duration": "CONTRACT",
+    "companyId": "53589485-19f6-404e-aac4-352a1a32ee4b",
+    "postedAt": "2021-02-23"
   }
 ]

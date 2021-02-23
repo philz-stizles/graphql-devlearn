@@ -1,3 +1,5 @@
+// yarn add react-router-dom moment guid graphql apollo-boost graphql-tag 
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom'

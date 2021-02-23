@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Loader from '../components/Loader'
-import { loadJob } from '../services/graphql/jobs'
+import { loadJob } from '../graphql/jobsService'
 
 export default class JobDetail extends Component {
     state = {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import JobList from '../components/jobs/JobList'
 import Loader from '../components/Loader'
-import { loadJobs } from '../services/graphql/jobs'
+import { loadJobs } from '../graphql/jobsService'
 
 export default class JobBoard extends Component {
     state = {

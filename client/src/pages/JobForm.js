@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
-import { createJob } from '../services/graphql/jobs'
+import { createJob } from '../graphql/jobsService'
 
-export default class JobForm extends Component {
+class JobForm extends Component {
     state = {
         jobForm: {
             title: "",
@@ -83,3 +84,5 @@ export default class JobForm extends Component {
         )
     }
 }
+
+export default withRouter(JobForm)
