@@ -23,7 +23,10 @@ export default class Login extends Component {
         e.preventDefault()
 
         login(this.state.loginForm).then((loggedInUser) => {
-            this.props.onLogin(loggedInUser)
+
+            if(loggedInUser){
+                this.props.onLogin(loggedInUser)
+            }
         })
     }
 

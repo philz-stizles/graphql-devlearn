@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
@@ -10,7 +10,10 @@ const Navbar = ({ isAuthenticated, onLogout, history }) => {
                 <Link to="/jobs" className="item">Job Board</Link>
                 {
                     (isAuthenticated) && (
-                        <Link to="/jobs/new" className="item">Create Job</Link>
+                        <Fragment>
+                            <Link to="/jobs/new" className="item">Create Job</Link>
+                            <Link to="/chat" className="item">Chat</Link>
+                        </Fragment>
                     )
                 }
                 {

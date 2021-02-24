@@ -1,4 +1,4 @@
-// yarn add react-router-dom moment guid graphql apollo-boost graphql-tag 
+// yarn add react-router-dom moment guid graphql apollo-boost graphql-tag jwt-decode, for websockets: apollo-link-ws subscriptions-transport-ws
 
 import React from 'react';
 import ReactDOM from 'react-dom';

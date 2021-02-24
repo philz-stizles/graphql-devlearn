@@ -1,5 +1,5 @@
 import gql from 'graphql-tag'
-import client from './'
+import client from './client'
 
 const jobDetailFragment = gql`
     fragment JobDetail on Job {

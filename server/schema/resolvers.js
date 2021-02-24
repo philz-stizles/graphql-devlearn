@@ -1,6 +1,16 @@
 const db = require('../db')
 const { v4: uuidv4 } = require('uuid');
 const moment = require('moment');
+const { PubSub } = require('graphql-subscriptions');
+
+const pubSub = new PubSub()
+const MESSAGE_ADDED = 'MESSAGE_ADDED'
+
+function checkAuthorization(userId) {
+    if (!userId) {
+        throw new Error('Unauthorized');
+    }
+}
 
 module.exports = {
     Query: {
@@ -11,7 +21,11 @@ module.exports = {
         post: (parent, { id }, context, info) => db.posts.get(id),
         jobs: (parent, args, context, info) => db.jobs.list(),
         job: (parent, { id }, context, info) => db.jobs.get(id),
-        company: (parent, { id }, context, info) => db.companies.get(id)
+        company: (parent, { id }, context, info) => db.companies.get(id),
+        messages: (parent, { id }, context, info) => {
+            checkAuthorization(context.user)
+            return db.messages.list()
+        }
     },
     Mutation: {
         createUser: (parent, { username, email }, context, info) => {
@@ -24,15 +38,28 @@ module.exports = {
         createCourse: () => posts,
         createComment: (_, { id }) => users.find(item => item.id === id),
         createJob: (parent, { input }, context, info) => {
-            console.log(context)
-            if(!context.user) {
-                throw new Error('Unauthorized')
-            }
+            checkAuthorization(context.user)
 
             const newJob = { ...input, companyId: context.user.companyId, postedAt: moment().format('YYYY-MM-DD') }
             const id = db.jobs.create(newJob)
             return db.jobs.get(id)
             // return newJob
+        },
+        createMessage: (parent, { input }, context, info) => {
+            // checkAuthorization(context.user)
+            const newMessage = { id: uuidv4(), ...input, userId: context.user.id, createdAt: moment().format('YYYY-MM-DD') }
+            const id = db.messages.create(newMessage)
+            const message = db.messages.get(id)
+            pubSub.publish(MESSAGE_ADDED, { messageAdded: message })
+            return message
+        }
+    },
+    Subscription: {
+        messageAdded: {
+            subscribe: (parent, { id }, context, info) => {
+                console.log('subscription', context)
+                return pubSub.asyncIterator(MESSAGE_ADDED)
+            }
         }
     },
     User: {
@@ -44,5 +71,8 @@ module.exports = {
     },
     Company: {
         jobs: (parent, args, context, info) => db.jobs.list().filter(job => job.companyId === parent.id)
-    }
+    },
+    Message: {
+        user: (parent) => db.users.get(parent.userId),
+    },
 }
